@@ -1,2 +1,288 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>École Saint-Michel | Lecciones</title><link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/layout.css"><link rel="stylesheet" href="css/lecciones.css"></head><body class="app-layout"><aside class="sidebar"><img src="assets/img/logo.png" alt="École Saint-Michel"><h2>École<br>Saint-Michel</h2><p class="slogan">GRANDIR SANS ARRÊT</p><nav class="menu"><a href="index.html">Inicio</a><a href="alumnos.html">Alumnos</a><a href="#">Grupos</a><a href="lecciones.html" class="active">Lecciones</a><a href="#">Ejercicios</a><a href="#">Evaluaciones</a><a href="#">Asistencia</a><a href="#">Pagos</a><a href="#">Avisos</a><a href="#">Administración</a></nav></aside><main class="main"><div class="top"><h1>Lecciones</h1><button class="btn" onclick="mostrarFormulario()">+ Nueva lección</button></div><div class="panel"><h2>Biblioteca de lecciones</h2><p>Administra las lecciones digitales que los maestros pueden usar con sus grupos.</p><div class="formulario" id="formularioLeccion"><br><h2>Agregar nueva lección</h2><form><input type="text" id="titulo" placeholder="Título de la lección"><input type="text" id="nivel" placeholder="Nivel: A1, A2, B1..."><select id="tipo"><option>Tipo de lección</option><option>Video</option><option>HTML interactivo</option><option>PDF</option><option>Audio</option><option>Presentación</option></select><input type="text" id="url" placeholder="Enlace de GitHub o URL de la lección"><textarea id="descripcion" placeholder="Descripción breve de la lección"></textarea><button class="btn" type="button" onclick="agregarLeccion()">Guardar lección</button></form></div></div><div class="grid" id="listaLecciones"><div class="lesson-card"><div class="lesson-icon">🇫🇷</div><h3>Saludar en francés</h3><p>Práctica oral con Bonjour, Bonsoir, Salut y Comment ça va.</p><div class="tags"><span class="tag">A1</span><span class="tag">Reconocimiento de voz</span></div><div class="acciones"><a class="ver" href="voz-frances.html">Abrir lección</a><button class="editar">Editar</button><button class="eliminar" onclick="eliminarLeccion(this)">Eliminar</button></div></div><div class="lesson-card"><div class="lesson-icon">🎧</div><h3>Pronunciación inicial</h3><p>Ejercicios para escuchar, repetir y mejorar sonidos básicos del francés.</p><div class="tags"><span class="tag">A1</span><span class="tag">Audio</span></div><div class="acciones"><a class="ver" href="#">Abrir lección</a><button class="editar">Editar</button><button class="eliminar" onclick="eliminarLeccion(this)">Eliminar</button></div></div><div class="lesson-card"><div class="lesson-icon">📘</div><h3>Francés de cada día</h3><p>Frases cotidianas del libro convertidas en práctica interactiva.</p><div class="tags"><span class="tag">A1</span><span class="tag">HTML interactivo</span></div><div class="acciones"><a class="ver" href="#">Abrir lección</a><button class="editar">Editar</button><button class="eliminar" onclick="eliminarLeccion(this)">Eliminar</button></div></div></div></main><script src="js/lecciones.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>École Saint-Michel | Lecciones</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/lecciones.css">
+</head>
+
+<body class="app-layout">
+
+    <aside class="sidebar">
+        ...
+    </aside>
+
+    <main class="main">
+        <main class="main">
+
+  <div class="top">
+    <div>
+      <h1>Lecciones</h1>
+      <p>Biblioteca organizada por niveles de francés: A1 a C1+.</p>
+    </div>
+
+    <button class="btn" onclick="mostrarFormulario()">+ Nueva lección</button>
+  </div>
+
+  <div class="panel">
+    <h2>Biblioteca de lecciones</h2>
+    <p>
+      Selecciona un nivel para ver sus lecciones. Puedes agregar nuevas lecciones
+      y enlazarlas a páginas HTML, ejercicios, audios o recursos externos.
+    </p>
+
+    <div class="level-tabs">
+      <button onclick="mostrarNivel('A1')">A1</button>
+      <button onclick="mostrarNivel('A2')">A2</button>
+      <button onclick="mostrarNivel('B1')">B1</button>
+      <button onclick="mostrarNivel('B2')">B2</button>
+      <button onclick="mostrarNivel('C1')">C1</button>
+      <button onclick="mostrarNivel('C1PLUS')">C1+</button>
+    </div>
+
+    <div class="formulario" id="formularioLeccion">
+      <br>
+      <h2>Agregar nueva lección</h2>
+
+      <form>
+        <input type="text" id="titulo" placeholder="Título de la lección">
+
+        <select id="nivel">
+          <option>Nivel</option>
+          <option>A1</option>
+          <option>A2</option>
+          <option>B1</option>
+          <option>B2</option>
+          <option>C1</option>
+          <option>C1+</option>
+        </select>
+
+        <select id="tipo">
+          <option>Tipo de lección</option>
+          <option>HTML interactivo</option>
+          <option>Reconocimiento de voz</option>
+          <option>Audio</option>
+          <option>Video</option>
+          <option>PDF</option>
+          <option>Presentación</option>
+        </select>
+
+        <input type="text" id="url" placeholder="Enlace de GitHub o URL de la lección">
+
+        <textarea id="descripcion" placeholder="Descripción breve de la lección"></textarea>
+
+        <button class="btn" type="button" onclick="agregarLeccion()">Guardar lección</button>
+      </form>
+    </div>
+  </div>
+
+  <section id="A1" class="nivel activo">
+    <h2>🇫🇷 Nivel A1 · Principiante</h2>
+
+    <div class="grid" id="listaA1">
+
+      <div class="lesson-card">
+        <div class="lesson-icon">👋</div>
+        <h3>Saludar en francés</h3>
+        <p>Práctica oral con Bonjour, Bonsoir, Salut y Comment ça va.</p>
+        <div class="tags">
+          <span class="tag">A1</span>
+          <span class="tag">Reconocimiento de voz</span>
+        </div>
+        <div class="acciones">
+          <a class="ver" href="voz-frances.html">Abrir lección</a>
+          <button class="editar">Editar</button>
+          <button class="eliminar" onclick="eliminarLeccion(this)">Eliminar</button>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <div class="lesson-icon">🚪</div>
+        <h3>Despedirse</h3>
+        <p>Au revoir, À demain, Bon voyage y Bonne nuit.</p>
+        <div class="tags">
+          <span class="tag">A1</span>
+          <span class="tag">Audio</span>
+        </div>
+        <div class="acciones">
+          <a class="ver" href="#">Abrir lección</a>
+          <button class="editar">Editar</button>
+          <button class="eliminar" onclick="eliminarLeccion(this)">Eliminar</button>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <div class="lesson-icon">😀</div>
+        <h3>Nombre y presentación</h3>
+        <p>Comment tu t’appelles ? Je m’appelle...</p>
+        <div class="tags">
+          <span class="tag">A1</span>
+          <span class="tag">Oral</span>
+        </div>
+        <div class="acciones">
+          <a class="ver" href="#">Abrir lección</a>
+          <button class="editar">Editar</button>
+          <button class="eliminar" onclick="eliminarLeccion(this)">Eliminar</button>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <div class="lesson-icon">🌎</div>
+        <h3>Procedencia</h3>
+        <p>Je suis mexicain. Je suis de Mexico. J’habite à...</p>
+        <div class="tags">
+          <span class="tag">A1</span>
+          <span class="tag">Frases básicas</span>
+        </div>
+        <div class="acciones">
+          <a class="ver" href="#">Abrir lección</a>
+          <button class="editar">Editar</button>
+          <button class="eliminar" onclick="eliminarLeccion(this)">Eliminar</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="A2" class="nivel">
+    <h2>🇫🇷 Nivel A2 · Básico alto</h2>
+
+    <div class="grid" id="listaA2">
+
+      <div class="lesson-card">
+        <div class="lesson-icon">🏠</div>
+        <h3>Mi casa</h3>
+        <p>Describir habitaciones, objetos y ubicación.</p>
+        <div class="tags">
+          <span class="tag">A2</span>
+          <span class="tag">Descripción</span>
+        </div>
+        <div class="acciones">
+          <a class="ver" href="#">Abrir lección</a>
+          <button class="editar">Editar</button>
+          <button class="eliminar" onclick="eliminarLeccion(this)">Eliminar</button>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <div class="lesson-icon">🛒</div>
+        <h3>De compras</h3>
+        <p>Preguntar precios, pedir productos y pagar.</p>
+        <div class="tags">
+          <span class="tag">A2</span>
+          <span class="tag">Situación real</span>
+        </div>
+        <div class="acciones">
+          <a class="ver" href="#">Abrir lección</a>
+          <button class="editar">Editar</button>
+          <button class="eliminar" onclick="eliminarLeccion(this)">Eliminar</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="B1" class="nivel">
+    <h2>🇫🇷 Nivel B1 · Intermedio</h2>
+
+    <div class="grid" id="listaB1">
+
+      <div class="lesson-card">
+        <div class="lesson-icon">✈️</div>
+        <h3>Viajes y transporte</h3>
+        <p>Reservaciones, aeropuerto, tren y hotel.</p>
+        <div class="tags">
+          <span class="tag">B1</span>
+          <span class="tag">Conversación</span>
+        </div>
+        <div class="acciones">
+          <a class="ver" href="#">Abrir lección</a>
+          <button class="editar">Editar</button>
+          <button class="eliminar" onclick="eliminarLeccion(this)">Eliminar</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="B2" class="nivel">
+    <h2>🇫🇷 Nivel B2 · Intermedio alto</h2>
+
+    <div class="grid" id="listaB2">
+
+      <div class="lesson-card">
+        <div class="lesson-icon">📰</div>
+        <h3>Opinión y actualidad</h3>
+        <p>Expresar puntos de vista, valorar y debatir.</p>
+        <div class="tags">
+          <span class="tag">B2</span>
+          <span class="tag">Opinión</span>
+        </div>
+        <div class="acciones">
+          <a class="ver" href="#">Abrir lección</a>
+          <button class="editar">Editar</button>
+          <button class="eliminar" onclick="eliminarLeccion(this)">Eliminar</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="C1" class="nivel">
+    <h2>🇫🇷 Nivel C1 · Avanzado</h2>
+
+    <div class="grid" id="listaC1">
+
+      <div class="lesson-card">
+        <div class="lesson-icon">🎓</div>
+        <h3>Francés académico</h3>
+        <p>Exposiciones, argumentos y estructura discursiva.</p>
+        <div class="tags">
+          <span class="tag">C1</span>
+          <span class="tag">Académico</span>
+        </div>
+        <div class="acciones">
+          <a class="ver" href="#">Abrir lección</a>
+          <button class="editar">Editar</button>
+          <button class="eliminar" onclick="eliminarLeccion(this)">Eliminar</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="C1PLUS" class="nivel">
+    <h2>🇫🇷 Nivel C1+ · Dominio avanzado</h2>
+
+    <div class="grid" id="listaC1PLUS">
+
+      <div class="lesson-card">
+        <div class="lesson-icon">🧠</div>
+        <h3>Debate avanzado</h3>
+        <p>Argumentación compleja, matices y fluidez oral.</p>
+        <div class="tags">
+          <span class="tag">C1+</span>
+          <span class="tag">Debate</span>
+        </div>
+        <div class="acciones">
+          <a class="ver" href="#">Abrir lección</a>
+          <button class="editar">Editar</button>
+          <button class="eliminar" onclick="eliminarLeccion(this)">Eliminar</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+    </main>
+
+</body>
+</html>  
