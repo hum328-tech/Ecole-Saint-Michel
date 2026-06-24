@@ -436,8 +436,7 @@ const A1_LESSONS = {
             }
         ]
     }
-
-
+};
 let currentLesson;
 let currentPhraseIndex = 0;
 let currentChunkIndex = 0;
