@@ -89,9 +89,15 @@ function eliminarLeccion(boton){
 
 }
 function mostrarNivel(id){
-  document.querySelectorAll(".nivel").forEach(nivel => {
-    nivel.classList.remove("activo");
-  });
 
-  document.getElementById(id).classList.add("activo");
+    document.getElementById("nivelesVista").style.display = "none";
+
+    document.querySelectorAll(".nivel")
+        .forEach(nivel => {
+            nivel.classList.remove("activo");
+        });
+
+    document.getElementById(id)
+        .classList.add("activo");
+
 }
