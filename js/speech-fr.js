@@ -463,7 +463,7 @@ document.addEventListener("DOMContentLoaded", function(){
         console.warn("No existe esta lección:", lessonKey);
         lessonKey = "saludar";
     }
-
+console.log("LECCIONES DISPONIBLES:", Object.keys(A1_LESSONS));
     currentLesson = A1_LESSONS[lessonKey];
 
     loadLesson();
