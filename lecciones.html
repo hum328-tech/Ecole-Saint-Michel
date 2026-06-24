@@ -79,59 +79,6 @@
     <button class="btn" onclick="mostrarFormulario()">+ Nueva lección</button>
   </div>
 
-  <div class="panel">
-    <h2>Biblioteca de lecciones</h2>
-    <p>
-      Selecciona un nivel para ver sus lecciones. Puedes agregar nuevas lecciones
-      y enlazarlas a páginas HTML, ejercicios, audios o recursos externos.
-    </p>
-
-    <div class="level-tabs">
-      <button onclick="mostrarNivel('A1')">A1</button>
-      <button onclick="mostrarNivel('A2')">A2</button>
-      <button onclick="mostrarNivel('B1')">B1</button>
-      <button onclick="mostrarNivel('B2')">B2</button>
-      <button onclick="mostrarNivel('C1')">C1</button>
-      <button onclick="mostrarNivel('C1PLUS')">C1+</button>
-    </div>
-
-    <div class="formulario" id="formularioLeccion">
-      <br>
-      <h2>Agregar nueva lección</h2>
-
-      <form>
-        <input type="text" id="titulo" placeholder="Título de la lección">
-
-        <select id="nivel">
-          <option>Nivel</option>
-          <option>A1</option>
-          <option>A2</option>
-          <option>B1</option>
-          <option>B2</option>
-          <option>C1</option>
-          <option>C1+</option>
-        </select>
-
-        <select id="tipo">
-          <option>Tipo de lección</option>
-          <option>HTML interactivo</option>
-          <option>Reconocimiento de voz</option>
-          <option>Audio</option>
-          <option>Video</option>
-          <option>PDF</option>
-          <option>Presentación</option>
-        </select>
-
-        <input type="text" id="url" placeholder="Enlace de GitHub o URL de la lección">
-
-        <textarea id="descripcion" placeholder="Descripción breve de la lección"></textarea>
-
-        <button class="btn" type="button" onclick="agregarLeccion()">Guardar lección</button>
-      </form>
-    </div>
-  </div>
-<section id="nivelesVista" class="modulos-niveles">
-
     <div class="module-card modulo-a1" onclick="mostrarNivel('A1')">
         <div class="module-cover"></div>
         <div class="module-body">
