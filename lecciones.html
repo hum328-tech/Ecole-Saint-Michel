@@ -31,8 +31,7 @@
 
     <nav class="menu">
 
-        <a href="index.html"
-           class="active">
+        <a href="index.html">
            Inicio
         </a>
 
@@ -44,9 +43,10 @@
             Grupos
         </a>
 
-        <a href="lecciones.html">
-            Lecciones
-        </a>
+       <a href="lecciones.html"
+   class="active">
+    Lecciones
+</a>>
 
         <a href="#">
             Ejercicios
@@ -68,7 +68,6 @@
 
 </aside>
 
-    <main class="main">
         <main class="main">
 
   <div class="top">
@@ -131,7 +130,63 @@
       </form>
     </div>
   </div>
+<section id="nivelesVista" class="modulos-niveles">
 
+    <div class="module-card modulo-a1" onclick="mostrarNivel('A1')">
+        <div class="module-cover"></div>
+        <div class="module-body">
+            <h3>Módulo A1</h3>
+            <p>Primeras palabras, saludos, presentación y frases básicas.</p>
+            <span class="tag">Principiante</span>
+        </div>
+    </div>
+
+    <div class="module-card modulo-a2" onclick="mostrarNivel('A2')">
+        <div class="module-cover"></div>
+        <div class="module-body">
+            <h3>Módulo A2</h3>
+            <p>Vida diaria, compras, casa, gustos y conversaciones sencillas.</p>
+            <span class="tag">Básico alto</span>
+        </div>
+    </div>
+
+    <div class="module-card modulo-b1" onclick="mostrarNivel('B1')">
+        <div class="module-cover"></div>
+        <div class="module-body">
+            <h3>Módulo B1</h3>
+            <p>Viajes, experiencias, planes, opiniones y situaciones reales.</p>
+            <span class="tag">Intermedio</span>
+        </div>
+    </div>
+
+    <div class="module-card modulo-b2" onclick="mostrarNivel('B2')">
+        <div class="module-cover"></div>
+        <div class="module-body">
+            <h3>Módulo B2</h3>
+            <p>Opinión, debate, actualidad, argumentos y comprensión avanzada.</p>
+            <span class="tag">Intermedio alto</span>
+        </div>
+    </div>
+
+    <div class="module-card modulo-c1" onclick="mostrarNivel('C1')">
+        <div class="module-cover"></div>
+        <div class="module-body">
+            <h3>Módulo C1</h3>
+            <p>Francés académico, exposición oral, matices y fluidez.</p>
+            <span class="tag">Avanzado</span>
+        </div>
+    </div>
+
+    <div class="module-card modulo-c1plus" onclick="mostrarNivel('C1PLUS')">
+        <div class="module-cover"></div>
+        <div class="module-body">
+            <h3>Módulo C1+</h3>
+            <p>Dominio avanzado, debate complejo y producción oral profesional.</p>
+            <span class="tag">Dominio</span>
+        </div>
+    </div>
+
+</section>
   <section id="A1" class="nivel">
     <h2>🇫🇷 Nivel A1 · Principiante</h2>
 
@@ -331,7 +386,8 @@
   </section>
 
 </main>
-    </main>
+
+<script src="js/lecciones.js"></script>
 
 </body>
-</html>  
+</html>
