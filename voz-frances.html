@@ -1,1 +1,277 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>École Saint-Michel | Voz Francés</title><link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/layout.css"><link rel="stylesheet" href="css/speech.css"></head><body class="app-layout"><aside class="sidebar"><img src="assets/img/logo.png" alt="École Saint-Michel"><h2>École<br>Saint-Michel</h2><p class="slogan">GRANDIR SANS ARRÊT</p><nav class="menu"><a href="index.html">Inicio</a><a href="alumnos.html">Alumnos</a><a href="#">Grupos</a><a href="lecciones.html">Lecciones</a><a href="#">Ejercicios</a><a href="#">Evaluaciones</a><a href="#">Asistencia</a><a href="#">Pagos</a><a href="#">Avisos</a><a href="#">Administración</a></nav></aside><main class="main"><div class="top"><div><h1>Saludar en francés</h1><p>Escucha, repite y recibe retroalimentación amable.</p></div></div><div class="panel"><div id="speechPractice"></div></div></main><script src="js/speech-fr.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>École Saint-Michel | Pronunciación A1</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/voz-frances.css">
+</head>
+
+<body class="app-layout">
+
+    <aside class="sidebar">
+
+        <img src="assets/img/logo.png"
+             alt="École Saint-Michel">
+
+        <h2>
+            École<br>
+            Saint-Michel
+        </h2>
+
+        <p class="slogan">
+            GRANDIR SANS ARRÊT
+        </p>
+
+        <nav class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="alumnos.html">Alumnos</a>
+            <a href="lecciones.html" class="active">Lecciones</a>
+            <a href="#">Ejercicios</a>
+            <a href="#">Evaluaciones</a>
+            <a href="#">Asistencia</a>
+            <a href="#">Pagos</a>
+        </nav>
+
+    </aside>
+
+
+    <main class="main">
+
+        <div class="top">
+
+            <div>
+                <h1 id="lessonTitle">
+                    Pronunciación A1
+                </h1>
+
+                <p id="lessonSubtitle">
+                    Escucha, repite y recibe retroalimentación amable.
+                </p>
+            </div>
+
+            <a class="btn"
+               href="lecciones.html">
+                Volver a lecciones
+            </a>
+
+        </div>
+
+
+        <section class="lesson-intro">
+
+            <div class="intro-card">
+
+                <h2>Objetivo</h2>
+
+                <p id="lessonGoal">
+                    Practicar frases básicas del francés cotidiano.
+                </p>
+
+            </div>
+
+            <div class="intro-card">
+
+                <h2>Progreso</h2>
+
+                <div class="progress-box">
+                    <div id="progressFill"
+                         class="progress-fill">
+                    </div>
+                </div>
+
+                <p id="progressText">
+                    0%
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="activity-tabs">
+
+            <button onclick="showActivity('listen')">
+                1. Escuchar y repetir
+            </button>
+
+            <button onclick="showActivity('chunks')">
+                2. Pronunciar por partes
+            </button>
+
+            <button onclick="showActivity('dialogue')">
+                3. Diálogo oral
+            </button>
+
+            <button onclick="showActivity('grammar')">
+                4. Traducción y gramática
+            </button>
+
+        </section>
+
+
+        <section id="listen"
+                 class="activity active">
+
+            <div class="practice-card">
+
+                <span class="activity-label">
+                    Actividad 1
+                </span>
+
+                <h2>Escucha y repite</h2>
+
+                <div id="phraseBox"
+                     class="phrase-box">
+                </div>
+
+                <div class="actions-row">
+
+                    <button onclick="playCurrentPhrase()">
+                        🔊 Escuchar
+                    </button>
+
+                    <button onclick="startRecognition()">
+                        🎙️ Repetir
+                    </button>
+
+                    <button onclick="nextPhrase()">
+                        Siguiente ➜
+                    </button>
+
+                </div>
+
+                <div id="feedback"
+                     class="feedback">
+                    Primero escucha el modelo y luego repite.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="chunks"
+                 class="activity">
+
+            <div class="practice-card">
+
+                <span class="activity-label">
+                    Actividad 2
+                </span>
+
+                <h2>Pronunciar por partes</h2>
+
+                <p>
+                    La frase se divide en partes pequeñas para practicar
+                    ritmo, memoria auditiva y pronunciación.
+                </p>
+
+                <div id="chunkBox"
+                     class="chunk-box">
+                </div>
+
+                <div class="actions-row">
+
+                    <button onclick="playChunk()">
+                        🔊 Escuchar parte
+                    </button>
+
+                    <button onclick="startChunkRecognition()">
+                        🎙️ Repetir parte
+                    </button>
+
+                    <button onclick="nextChunk()">
+                        Siguiente parte ➜
+                    </button>
+
+                </div>
+
+                <div id="chunkFeedback"
+                     class="feedback">
+                    Escucha una parte y repítela.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="dialogue"
+                 class="activity">
+
+            <div class="practice-card">
+
+                <span class="activity-label">
+                    Actividad 3
+                </span>
+
+                <h2>Diálogo oral guiado</h2>
+
+                <p>
+                    El sistema dice una frase y el alumno responde oralmente.
+                </p>
+
+                <div id="dialogueBox"
+                     class="dialogue-box">
+                </div>
+
+                <div class="actions-row">
+
+                    <button onclick="playDialoguePrompt()">
+                        🔊 Escuchar turno
+                    </button>
+
+                    <button onclick="startDialogueRecognition()">
+                        🎙️ Responder
+                    </button>
+
+                    <button onclick="nextDialogueTurn()">
+                        Siguiente turno ➜
+                    </button>
+
+                </div>
+
+                <div id="dialogueFeedback"
+                     class="feedback">
+                    Escucha el turno y responde.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="grammar"
+                 class="activity">
+
+            <div class="practice-card">
+
+                <span class="activity-label">
+                    Apoyo lingüístico
+                </span>
+
+                <h2>Traducción y explicación</h2>
+
+                <div id="grammarBox"
+                     class="grammar-box">
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/speech-fr.js"></script>
+
+</body>
+
+</html>
