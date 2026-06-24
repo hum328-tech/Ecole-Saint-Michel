@@ -383,9 +383,21 @@ let scoreCount = 0;
 document.addEventListener("DOMContentLoaded", function(){
 
     const params = new URLSearchParams(window.location.search);
-    const lessonKey = params.get("lesson") || "saludar";
 
-    currentLesson = A1_LESSONS[lessonKey] || A1_LESSONS.saludar;
+    let lessonKey = params.get("lesson");
+
+    console.log("LECCIÓN RECIBIDA:", lessonKey);
+
+    if(!lessonKey){
+        lessonKey = "saludar";
+    }
+
+    if(!A1_LESSONS[lessonKey]){
+        console.warn("No existe esta lección:", lessonKey);
+        lessonKey = "saludar";
+    }
+
+    currentLesson = A1_LESSONS[lessonKey];
 
     loadLesson();
 
