@@ -149,3 +149,69 @@ form button{
   color:var(--azul);
   margin-bottom:18px;
 }
+.modulos-niveles{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:26px;
+    margin-top:30px;
+    margin-bottom:35px;
+}
+
+.module-card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    cursor:pointer;
+    transition:.2s;
+}
+
+.module-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,.22);
+}
+
+.module-cover{
+    height:150px;
+    background:var(--azul);
+}
+
+.module-body{
+    padding:18px 20px 22px;
+}
+
+.module-body h3{
+    color:var(--azul);
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+.module-body p{
+    color:#555;
+    line-height:1.4;
+    margin-bottom:12px;
+}
+
+.modulo-a1 .module-cover{
+    background:#0b83bd;
+}
+
+.modulo-a2 .module-cover{
+    background:#8a5a0a;
+}
+
+.modulo-b1 .module-cover{
+    background:#53a708;
+}
+
+.modulo-b2 .module-cover{
+    background:#84863c;
+}
+
+.modulo-c1 .module-cover{
+    background:#6d28d9;
+}
+
+.modulo-c1plus .module-cover{
+    background:#111827;
+}
