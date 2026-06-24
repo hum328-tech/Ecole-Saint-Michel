@@ -367,6 +367,73 @@ const A1_LESSONS = {
                 title: "Enchanté",
                 text: "Respuesta social equivalente a encantado."
             }
+               ]
+    },
+
+    pruebaB1: {
+        title: "Prueba oral B1",
+        subtitle: "Frases largas · Fluidez y pronunciación",
+        goal: "Evaluar la pronunciación de frases largas con ritmo, claridad y fluidez.",
+
+        phrases: [
+            {
+                fr: "Je voudrais réserver une table pour quatre personnes ce soir à huit heures.",
+                es: "Quisiera reservar una mesa para cuatro personas esta noche a las ocho.",
+                tip: "Practica la frase en bloques pequeños.",
+                ok: [
+                    "je voudrais réserver une table pour quatre personnes ce soir à huit heures",
+                    "je voudrais reserver une table pour quatre personnes ce soir a huit heures"
+                ]
+            },
+
+            {
+                fr: "Pendant les vacances, nous avons visité plusieurs villes et découvert beaucoup de traditions locales.",
+                es: "Durante las vacaciones visitamos varias ciudades y descubrimos muchas tradiciones locales.",
+                tip: "Escucha primero el ritmo completo.",
+                ok: [
+                    "pendant les vacances nous avons visité plusieurs villes et découvert beaucoup de traditions locales",
+                    "pendant les vacances nous avons visite plusieurs villes et decouvert beaucoup de traditions locales"
+                ]
+            },
+
+            {
+                fr: "À mon avis, apprendre une langue étrangère permet de mieux comprendre la culture des autres.",
+                es: "En mi opinión, aprender una lengua extranjera permite comprender mejor la cultura de los demás.",
+                tip: "Pon atención a la pronunciación de étrangère.",
+                ok: [
+                    "à mon avis apprendre une langue étrangère permet de mieux comprendre la culture des autres",
+                    "a mon avis apprendre une langue etrangere permet de mieux comprendre la culture des autres"
+                ]
+            }
+        ],
+
+        dialogue: [
+            {
+                system: "Pourquoi veux-tu apprendre le français ?",
+                expected: "Je veux apprendre le français parce que j’aime la culture française."
+            },
+
+            {
+                system: "Qu’est-ce que tu as fait le week-end dernier ?",
+                expected: "Le week-end dernier, j’ai passé du temps avec ma famille."
+            }
+        ],
+
+        grammar: [
+            {
+                title: "Je voudrais",
+                text: "Se utiliza para expresar deseos o hacer peticiones de manera cortés."
+            },
+
+            {
+                title: "À mon avis",
+                text: "Expresión utilizada para introducir una opinión personal."
+            },
+
+            {
+                title: "Langue étrangère",
+                text: "Significa lengua extranjera."
+            }
         ]
     }
 
